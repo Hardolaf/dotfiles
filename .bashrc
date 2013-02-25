@@ -1,10 +1,11 @@
-# /etc/skel/.bashrc
+# ============================================================================
+# = hardolaf's_.bashrc                                                       =
+# ============================================================================
 #
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output.  So make sure this doesn't display
-# anything or bad things will happen !
-
+# TABLE OF CONTENTS
+# 1. path
+# 2. aliases
+# 3. colors
 
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
@@ -14,14 +15,14 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-
-# Put your fun stuff here.
+# ============================================================================
+# = path                                                                     =
+# ============================================================================
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-
-##################################################################
-#                        Aliases                                 #
-##################################################################
+# ============================================================================
+# = aliases                                                                  =
+# ============================================================================
 alias ls='ls --color=auto'
 
 # enable programmable completion features (you don't need to enable
@@ -35,6 +36,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# =============================================================================
+# = Colors                                                                    =
+# =============================================================================
 red="\[\e[0;33m\]"
 yellow="\[\e[0;31m\]"
 
@@ -44,8 +48,5 @@ else
 	root="${red}"
 fi
 
-##################################################################
-#                         Colors                                 #
-##################################################################
 PS1="\[\e[0;37m\]┌─[${root}\u\[\e[0;37m\]][\[\e[0;96m\]\h\[\e[0;37m\]][\[\e[0;32m\]\w\[\e[0;37m\]]\n\[\e[0;37m\]└──╼ \[\e[0m\]"
 PS2="╾──╼ "
